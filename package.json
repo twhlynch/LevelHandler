@@ -1,0 +1,41 @@
+{
+  "name": "levelhandler",
+  "version": "1.0.0",
+  "description": "Open GRAB .level files",
+  "main": "main.js",
+  "keywords": [],
+  "author": "twhlynch",
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "^30.0.3",
+    "electron-builder": "^24.13.3"
+  },
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-builder",
+    "build-win": "electron-builder --win"
+  },
+  "dependencies": {
+    "protobufjs": "^6.11.2"
+  },
+  "homepage": "https://twhlynch.me",
+  "build": {
+    "appId": "LevelHandler",
+    "productName": "Level Handler",
+    "fileAssociations": [
+      {
+        "ext": "level",
+        "name": "GRAB Level",
+        "description": "GRAB Level",
+        "role": "Viewer"
+      }
+    ],
+    "dmg": {
+      "icon": "icon.icns"
+    },
+    "win": {
+      "icon": "icon.ico",
+      "target": "nsis"
+    }
+  }
+}
