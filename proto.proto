@@ -4,18 +4,20 @@ package COD.Level;
 
 message Level
 {
-  uint32 formatVersion = 1;
+	uint32 formatVersion = 1;
 
-  string title = 2;
-  string creators = 3;
-  string description = 4;
-  uint32 complexity = 5;
-  uint32 maxCheckpointCount = 7;
+	string title = 2;
+	repeated string tags = 9;
+	string creators = 3;
+	string description = 4;
+	uint32 complexity = 5;
+	uint32 maxCheckpointCount = 7;
 
-  AmbienceSettings ambienceSettings = 8;
+	AmbienceSettings ambienceSettings = 8;
 
-  repeated LevelNode levelNodes = 6;
+	repeated LevelNode levelNodes = 6;
 }
+
 
 message Vector
 {
@@ -65,6 +67,7 @@ enum LevelNodeShape
 	CYLINDER = 1002;
 	PYRAMID = 1003;
 	PRISM = 1004;
+	CONE = 1005;
 }
 
 enum LevelNodeMaterial
@@ -113,8 +116,11 @@ message LevelNodeStatic
 	Vector scale = 4;
 	Quaternion rotation = 5;
 
-	Color color = 6;
+	Color color1 = 6;
+	Color color2 = 9;
+
 	bool isNeon = 7;
+	bool isTransparent = 8;
 }
 
 message LevelNodeCrumbling
