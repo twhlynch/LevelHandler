@@ -13,7 +13,8 @@
   "scripts": {
     "start": "electron .",
     "build": "electron-builder",
-    "build-win": "electron-builder --win"
+    "build-win": "electron-builder --win",
+    "test": "electron . ./test.level"
   },
   "dependencies": {
     "protobufjs": "^6.11.2"

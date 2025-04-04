@@ -2,6 +2,8 @@ const { app, protocol, shell, Notification, Menu, Tray } = require('electron');
 const path = require('path');
 const fs = require('fs');
 const protobuf = require('protobufjs');
+const process = require('process');
+const fileArg = process.argv.find(arg => arg.endsWith('.level'));
 
 app.on('ready', () => {
   protocol.handle('file', (request, callback) => {
@@ -31,6 +33,10 @@ app.on('ready', () => {
   app.on('activate', () => {
     app.quit();
   });
+
+  if (fileArg) {
+    handleLevelFile(fileArg);
+  }
 });
 
 function handleLevelFile(filePath) {
