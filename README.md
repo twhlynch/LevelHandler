@@ -1,6 +1,6 @@
 # Level Handler
 
-A simple utility for opening GRAB .level files as JSON.
+Utility for opening GRAB .level files as JSON.
 
 Set the app as the default handler for .level files to open them with this app.
 
