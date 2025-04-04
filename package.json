@@ -31,10 +31,10 @@
       }
     ],
     "dmg": {
-      "icon": "icon.icns"
+      "icon": "icons/icon.icns"
     },
     "win": {
-      "icon": "icon.ico",
+      "icon": "icons/icon.ico",
       "target": "nsis"
     }
   }
