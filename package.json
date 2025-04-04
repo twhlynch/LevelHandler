@@ -1,6 +1,6 @@
 {
   "name": "levelhandler",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Open GRAB .level files",
   "main": "main.js",
   "keywords": [],
