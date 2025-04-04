@@ -39,9 +39,14 @@ app.on('ready', () => {
   }
 });
 
-function handleLevelFile(filePath) {
-  const protoFilePath = path.join(__dirname, 'proto.proto');
-  const protoRoot = protobuf.loadSync(protoFilePath);
+async function handleLevelFile(filePath) {
+  console.log("File: ", filePath);
+
+  const protoUrl = 'https://grab-tools.live/proto/proto.proto';
+
+  const response = await fetch(protoUrl);
+  const protoText = await response.text();
+  const protoRoot = protobuf.parse(protoText).root;
   const LevelMessage = protoRoot.lookupType('COD.Level.Level');
 
   fs.readFile(filePath, (err, data) => {
